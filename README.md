@@ -1,2 +1,2 @@
 # angular
-Might add sevelar angular apps while learning angular
+Might add several angular apps while learning angular
