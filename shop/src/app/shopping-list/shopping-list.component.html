@@ -1,7 +1,7 @@
 <p>shopping-list works!</p>
 <div class="row">
     <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit (ingredient)="addIngredient($event)"></app-shopping-edit>
         <hr>
         <ul class="list-group">
             <a class="list-group-item" stype="cursor: pointer" *ngFor="let i of ingredients">{{i.name}} ({{i.amount}})</a>
