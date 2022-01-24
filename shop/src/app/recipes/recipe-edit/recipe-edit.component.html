@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-success" [disabled]="recipeForm.invalid">Save</button>
-                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                    <button type="button" class="btn btn-danger" (click)="onCancel()" style="margin-left: 2px;">Cancel</button>
                 </div>
             </div>
             <div class="row">
@@ -53,6 +53,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <button type="button" class="btn btn-success" (click)="onAddIngredient()">Add Ingredient</button>
+                            <button type="button" class="btn btn-danger" (click)="onDeleteAllIngredients()" style="margin-left: 2px;">Delete All</button>
                         </div>
                     </div>
                 </div>
