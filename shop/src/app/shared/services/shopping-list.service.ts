@@ -12,10 +12,15 @@ export class ShoppingListService {
     new Ingredient("Oxygen", 1)
   ];
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
   constructor() { }
 
   getIngredients() {
     return this.ingredients.slice();
+  }
+
+  getIngredient(index: number) {
+    return this.ingredients[index];
   }
 
   addIngredient(i: Ingredient) {
