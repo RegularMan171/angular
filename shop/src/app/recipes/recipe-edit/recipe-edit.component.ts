@@ -29,6 +29,10 @@ export class RecipeEditComponent implements OnInit {
       }
     );
   }
+  
+  get controls() { // a getter!
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
 
   private initForm() {
 
@@ -57,16 +61,13 @@ export class RecipeEditComponent implements OnInit {
     this.recipeForm = new FormGroup({
       'name': new FormControl(recipeName),
       'imgPath': new FormControl(recipeImgPath),
-      'description': new FormControl(recipeDesc)
+      'description': new FormControl(recipeDesc),
+      'ingredients': recipeIngredients
     });
   }
 
   onSubmit() {
   console.log(this.recipeForm.value)
-  }
-
-    get controls() { // a getter!
-    return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
 
