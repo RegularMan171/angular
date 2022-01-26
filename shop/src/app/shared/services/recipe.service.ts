@@ -11,22 +11,29 @@ export class RecipeService {
 
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe("Water",
-    "Everybody needs water",
-    "https://examsbook.co.in/img/post/large/0lBTMirror-and-Water-Image-Questions.jpg",
-    [
-      new Ingredient('Hydrogen', 2),
-      new Ingredient('Oxygen', 1)
-    ]),
-    new Recipe("H2O",
-    "Everybody needs water",
-    "https://examsbook.co.in/img/post/large/0lBTMirror-and-Water-Image-Questions.jpg",
-    [
-      new Ingredient('H',2),
-      new Ingredient('O', 2)
-    ])    
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe("Water",
+  //   "Everybody needs water",
+  //   "https://examsbook.co.in/img/post/large/0lBTMirror-and-Water-Image-Questions.jpg",
+  //   [
+  //     new Ingredient('Hydrogen', 2),
+  //     new Ingredient('Oxygen', 1)
+  //   ]),
+  //   new Recipe("H2O",
+  //   "Everybody needs water",
+  //   "https://examsbook.co.in/img/post/large/0lBTMirror-and-Water-Image-Questions.jpg",
+  //   [
+  //     new Ingredient('H',2),
+  //     new Ingredient('O', 2)
+  //   ])    
+  // ];
+
+  private recipes: Recipe[] = [];
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
