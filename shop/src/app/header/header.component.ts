@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
     this.userSub = this.as.user.subscribe(
       user => {
         this.isAuthenticated = !!user;
-        console.log(!user, !!user);
       });
   }
 
