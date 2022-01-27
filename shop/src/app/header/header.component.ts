@@ -30,6 +30,10 @@ export class HeaderComponent implements OnInit {
     this.dss.fetchRecipes().subscribe()
   }
 
+  onLogout() {
+    this.as.logout();
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
